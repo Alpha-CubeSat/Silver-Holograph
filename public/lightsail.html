@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Alpha Cubesat lightsail</title>
+
+    <!-- Muting Site -->
+    <script>
+        [].slice.call(document.querySelectorAll('audio')).forEach(function (audio) {
+            audio.muted = true;
+        });
+    </script>
+
+    <!-- EXTERNAL JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.4.6/dist/js/splide-extension-video.min.js"></script>
+    <script src="https://kit.fontawesome.com/f7ec263f57.js" crossorigin="anonymous"></script>
+
+    <!-- <script src="./js/slider.js"></script> -->
+    <script src="./js/scroll.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="./styles/css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.4.6/dist/css/splide-extension-video.min.css">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script> -->
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="images/icons/logo.ico">
+
+    <!-- VOTING -->
+</head>
+
+<body>
+
+    <div class="background">
+        <div class='layer-page  layer' data-depth='1' data-type='parallax'></div>
+        <!-- <div class='layer-2 layer' data-depth='1' data-type='parallax'></div>
+        <div class='layer-3 layer' data-depth='0.9' data-type='parallax'></div>
+        <div class='layer-4 layer' data-depth='0.8' data-type='parallax'></div>
+        <div class='layer-5 layer' data-depth='0.7' data-type='parallax'></div>
+        <div class='layer-6 layer' data-depth='0.6' data-type='parallax'></div> -->
+    </div>
+
+    <div class="overlay">
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">ALPHA CUBESAT</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse highlightTextOut" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item animated slide-in-up infinite">
+                        <a class="nav-link js-scroll-trigger" href="index.html">▸ <span
+                                class="navLetter">A</span>bout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="lightsail.html">▸ <span
+                                class="navLetter">L</span>ightsail</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="holograms.html">▸ <span
+                                class="navLetter">H</span>olograms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="chipsats.html">▸ <span
+                                class="navLetter">C</span>hipsats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="components.html">▸ <span
+                                class="navLetter">C</span>ubesat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="history.html">▸ <span
+                                class="navLetter">H</span>istory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="team.html">▸ <span class="navLetter">T</span>eam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">▸ <span
+                                class="navLetter">C</span>ontact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="postcards.html">▸ <span class="navLetter">P</span>ostcards</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HOME ABOUT -->
+    <section class="full-page about" id="page-top">
+        <div class="alone">
+            <div class="container">
+                <div class="content">
+                    <h2 class="mb-5">lightsail</h2>
+                    <p>Alpha CubeSat will deploy the first-ever free-flying,
+                        retroreflective <em>light sail</em>. Its tiny ChipSat computers also allow Alpha to be the
+                        smallest light sail
+                        yet. Someday, we may send an entire fleet of these light sails to other stars.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img src="images/sail_edit.png" alt="image of a lightsail" class="small">
+    </section>
+
+
+    <h2 class="alone">Hang on, What are light sails? </h2>
+    <p class="alone">Light sails are a lot like boat sails. But instead of being pushed by
+        wind, light sails are pushed by the actual particles of light (photons) that strike them. This
+        means light sails don’t need to chuck any propellant behind them like a typical rocket or
+        spacecraft—no heavy fuel tanks to carry, or even any engines. That’s especially helpful in
+        long-term missions to another star.</p>
+
+
+
+    <img class="alone" src="images/team.png" alt="a photo of team members holding lightsail components ">
+
+    <h2 class="alone">Alpha's innovations<span id="about-empty-type"></span></h2>
+
+    <div class="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/sail_comp_same_height.png" alt="show light sail size comparison ">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/retroreflective_resized.gif">
+                    <div class="carousel-caption">
+                        <h5>Alpha’s sail material is retroreflective—the same effect seen in cats’ eyes at night. Rather
+                            than scattering light in all directions, retroflection bounces light back the same way it
+                            came, accelerating the sail faster.</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/scattering_demo_resized.gif">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Light_Sail_Origami_Miura_Fold_resized.gif" alt="">
+                    <div class="carousel-caption">
+                        <h5>Light sail origami miura fold</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+    <div>
+        <p class="alone">
+            Compared to previous sails such as The Planetary Society’s LightSail 2, Alpha’s sail is <em>much, much
+                smaller </em> (57.5 by 57.5 centimeters, 0.04 millimeters
+            thick)—and together with its 4 ChipSats weighs less than 100 grams.
+        </p>
+        <p class="alone">
+            This gives the sail a low mass per
+            unit
+            area, allowing it to accelerate faster and shorten our travel time.
+
+            The ChipSats function as flight computers, allowing the light sail to completely disconnect from its
+            host
+            spacecraft (the CubeSat). This makes it the first free-flying light sail in the world, able to fly
+            completely
+            solo.
+        </p>
+    </div>
+
+    <h2 class="alone spacing-title">High Acceleration Made Possible By ...</h2>
+
+    <img class="alone" src="images/material_diagram.png" alt="image of a lightsail technology">
+
+    <h2 class="alone-small-margin">Getting Technical</h2>
+    <p class="alone">Alpha’s light sail is made of polycarbonate. Two Nitinol wires form an X across the sail, and
+        serve as a force on each corner to unravel the Miura fold. The compartment holding the light
+        sail takes up half of the CubeSat’s volume. Burn-wires hold back a spring-loaded latch on the
+        compartment door. After the CubeSat receives the command to deploy, the burn-wires are cut, and
+        the door swings open. The light sail unfolds <em>near-instantaneously.</em> Bigger light sails
+        often take
+        minutes to hours.</p>
+
+    <img class="alone" src="images/Light_Sail_Design.png"
+        alt="image of the lightsail design with Hinged Tail unfolded, woven unfolding Nitinol wires and Corner Monarch x4">
+
+    <!-- TODO VIDEO -->
+    <!-- <section class="video">
+                <iframe style="margin: 0 auto; width: 70%; height: 500px"
+                    src="https://www.youtube.com/embed/v1xQxAS3No4">
+                </iframe>
+            </section> -->
+    <!-- <img class="alone" src="images/sail-deploy-test.gif" alt="gif of the sail deploy test"> -->
+    </div>
+    </section>
+
+
+    <h2 class="alone">How Long's The Flight?</h2>
+    <p class="alone">Alpha CubeSat is launching from the International Space Station, which is in Low Earth Orbit.
+        This means Alpha’s sail will last for a couple days at most before atmospheric drag (the
+        friction due to tiny particles) will slow it down, causing it to fall.</p>
+    <p class="alone">
+        Those days will be jam-packed with a whirlwind of light sail data—we’ll learn just how well
+        Alpha’s innovative design works.</p>
+
+
+    <img class="alone" src="images/space.png" alt="image of space">
+
+
+
+    <h2 class="alone">The Future</h2>
+    <p class="alone">Breakthrough Starshot hopes to send a fleet of one thousand light sails to our nearest star
+        system, Alpha Centauri.</p>
+    <p class="alone">
+        They’ll do this with the help of an array of lasers, which could accelerate the sails to 20% the
+        speed of light after just a few minutes.
+    <p class="alone">
+        There’s a lot of progress to be made before this can happen: we need to protect the sails from
+        space dust, prevent the sails from being incinerated by the laser beam, and make our flight
+        computers even smaller than the ChipSats.</p>
+    <p class="alone">
+        Alpha serves as a valuable test along the way, as we reach for more efficient sails—and, at
+        last, for the stars. </p>
+
+    <img class="footer" src="images/footer_lightsail.png" alt="">
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <h2><span id="contact-empty-type"></span> Us</h2>
+
+            <script>
+                var typed = new Typed("#contact-empty-type", {
+                    strings: ['Reach out to', 'Write to', 'Connect with'],
+                    typeSpeed: 40,
+                    backSpeed: 20,
+                    loop: true
+                });
+            </script>
+
+            <div class="col-6 contact-content">
+                <p>cornellalphacubesat@gmail.com</p>
+                <p>124 Hoy Rd, 450 Upson Hall <br>
+                    Cornell University <br>
+                    Ithaca, NY 14853</p>
+                <!-- <a class="link-button" href="about.html">Learn More</a> -->
+
+                <a href="https://www.instagram.com/ssds.alphacubesat/" target="_blank"><img
+                        src="images/icons/Instagram.png" alt="Instagram"></img></a>
+                <a href="https://www.linkedin.com/company/cornell-alpha-cubesat-mission/" target="_blank"><img
+                        src="images/icons/Linkedin.png" alt="LinkedIn"></img></a>
+                <a href="https://github.com/Alpha-CubeSat" target="_blank"><img src="images/icons/Github.png"
+                        alt="Github"></img></a>
+
+                <p style="font-size: 14px; margin-top: 2rem;">Website hosted by Benjamin Lowry</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+
+    <!-- Plugin JavaScript -->
+    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
+
+    <!-- SCROLLING NAV JAVASCRIPT -->
+    <!-- <script src="js/scrolling-nav.js"></script> -->
+
+</body>
+
+</html>

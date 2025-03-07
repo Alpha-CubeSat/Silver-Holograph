@@ -1,0 +1,54 @@
+{
+  "name": "golden-holograms",
+  "version": "1.0.0",
+  "description": "Golden Holograms backend test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alpha-CubeSat/Golden-Holograms.git"
+  },
+  "keywords": [
+    "Golden",
+    "Record",
+    "Alpha",
+    "Alpha",
+    "CubeSat",
+    "Cornell",
+    "Alpha",
+    "Cornell",
+    "Cornell",
+    "University",
+    "Golden",
+    "Holograms",
+    "Holograms",
+    "Space",
+    "Message",
+    "in",
+    "a",
+    "Bottle",
+    "Carl",
+    "Sagan",
+    "Nick",
+    "Sagan",
+    "Sagan",
+    "Cosmos",
+    "Holographic",
+    "Holographic",
+    "Art"
+  ],
+  "author": "Alpha CubeSat Mission",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alpha-CubeSat/Golden-Holograms/issues"
+  },
+  "homepage": "https://github.com/Alpha-CubeSat/Golden-Holograms#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "next": "^11.1.3",
+    "react": "^17.0.2"
+  }
+}
