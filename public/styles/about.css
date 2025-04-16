@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to bottom, #0f0f4f, #1c1c6e);
+    color: white;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0d0d33;
+    padding: 1rem 2rem;
+    font-size: 14px;
+  }
+  
+  .navbar .logo {
+    font-weight: bold;
+  }
+  
+  .navbar .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  
+  .navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+  }
+  .navbar .nav-links a:hover {
+    color: #00ffe5;
+  }
+  
+  .hero {
+    position: relative;
+    height: 80vh;
+    background: url('../images/lightsail.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.45); /* subtle overlay for text visibility */
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+  }
+  
+  .mission {
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+  .mission h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .mission-points {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+  }
+  .mission-points div {
+    max-width: 250px;
+    margin: 1rem;
+  }
+  .mission-points h3 {
+    font-size: 1.2rem;
+    color: #00ffe5;
+  }
+  
+  .social {
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+  .social-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .insta-post {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    border-radius: 10px;
+  }
+  
+  .footer {
+    background-color: #0a0a1a;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  .footer-left, .footer-right {
+    flex: 1 1 300px;
+  }
+  .footer-right {
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-right h4 {
+    margin-bottom: 0.5rem;
+  }
+  .footer-right ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-right ul li {
+    margin-bottom: 0.3rem;
+  }
+  .social-icons img {
+    width: 24px;
+    margin-right: 0.5rem;
+  }
+  .copyright {
+    text-align: center;
+    width: 100%;
+    padding-top: 1rem;
+    font-size: 12px;
+    color: #aaa;
+  }
