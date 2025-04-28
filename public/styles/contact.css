@@ -20,12 +20,12 @@ body {
   .navbar .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
   
   .navbar .nav-links a {
-    color: white;
     text-decoration: none;
+    color: white;
     transition: 0.3s;
   }
   
@@ -33,75 +33,26 @@ body {
     color: #00ffe5;
   }
   
-  .outreach-hero {
-    padding: 2rem;
+  .contact-hero {
     text-align: center;
+    margin: 8rem 2rem 5rem;
   }
   
-  .outreach-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .outreach-header h1 {
+  .contact-hero h1 {
     font-size: 2.5rem;
+    margin-bottom: 2rem;
   }
   
-  .outreach-header img {
-    max-width: 300px;
+  .contact-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .email {
+    font-size: 1.5rem;
     margin-top: 1rem;
-  }
-  
-  .outreach-intro {
-    max-width: 600px;
-    margin: 1rem 0;
-  }
-  
-  .outreach-block {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 3rem 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .outreach-block.two-col .box-img,
-  .outreach-block.two-col.reverse .box-img {
-    width: 300px;
-    height: 200px;
-    background: #ccc;
-    border-radius: 12px;
-    margin: 1rem;
-  }
-  
-  .outreach-block .box-text {
-    max-width: 400px;
-    margin: 1rem;
-  }
-  
-  .outreach-block.reverse {
-    flex-direction: row-reverse;
-  }
-  
-  .outreach-gallery {
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-  
-  .gallery-row {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-  
-  .gallery-img {
-    width: 120px;
-    height: 120px;
-    background: #ccc;
-    border-radius: 10px;
+    font-weight: bold;
+    color: #ffffff;
   }
   
   .footer {
