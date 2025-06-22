@@ -1,8 +1,63 @@
 body {
   margin: 0;
-  background: linear-gradient(to bottom, #0f0f4f, #2b2c88);
+  background: linear-gradient(to bottom, #0E0B21, #1f1849, #4B3DDD);
   color: white;
   font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(2px 2px at 15px 25px, #fff, transparent),
+    radial-gradient(1px 1px at 85px 140px, #fff, transparent),
+    radial-gradient(2px 2px at 220px 60px, #fff, transparent),
+    radial-gradient(1px 1px at 350px 180px, #fff, transparent),
+    radial-gradient(1px 1px at 480px 35px, #fff, transparent),
+    radial-gradient(2px 2px at 620px 120px, #fff, transparent),
+    radial-gradient(1px 1px at 750px 190px, #fff, transparent),
+    radial-gradient(1px 1px at 880px 45px, #fff, transparent),
+    radial-gradient(2px 2px at 1020px 165px, #fff, transparent),
+    radial-gradient(1px 1px at 1150px 85px, #fff, transparent),
+    radial-gradient(1px 1px at 1280px 210px, #fff, transparent),
+    radial-gradient(2px 2px at 1420px 95px, #fff, transparent),
+    radial-gradient(1px 1px at 65px 270px, #fff, transparent),
+    radial-gradient(1px 1px at 195px 320px, #fff, transparent),
+    radial-gradient(2px 2px at 325px 240px, #fff, transparent),
+    radial-gradient(1px 1px at 455px 350px, #fff, transparent),
+    radial-gradient(1px 1px at 585px 280px, #fff, transparent),
+    radial-gradient(2px 2px at 715px 330px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 1500px 400px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Ensure content appears above stars */
+.navbar,
+.outreach-hero,
+.outreach-block,
+.outreach-gallery,
+.footer {
+  position: relative;
+  z-index: 1;
 }
 
 .navbar {
@@ -35,7 +90,6 @@ body {
 
 .navbar .logo img {
   height: 50px;
-
   width: auto;
 }
 
@@ -45,47 +99,77 @@ body {
 }
 
 .outreach-hero {
-  padding: 2rem;
-  text-align: center;
+  padding: 3rem 10%;
 }
 
 .outreach-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  gap: 3rem;
 }
 
-.outreach-header h1 {
+.outreach-content {
+  flex: 1;
+  text-align: left;
+}
+
+.outreach-content h1 {
   font-size: 2.5rem;
-}
-
-.outreach-header img {
-  max-width: 300px;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .outreach-intro {
-  max-width: 600px;
-  margin: 1rem 0;
+  max-width: 100%;
+  margin: 0;
+}
+
+.outreach-image {
+  flex: 0 0 300px;
+}
+
+.outreach-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .outreach-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .outreach-content {
+    text-align: center;
+  }
+
+  .outreach-image {
+    flex: none;
+  }
 }
 
 .outreach-block {
   display: flex;
   justify-content: space-between;
-  /* Changed from space-around to space-between */
   align-items: center;
   padding: 3rem 10%;
-  /* Add percentage padding for consistent spacing */
   flex-wrap: wrap;
 }
 
 .outreach-block.two-col .box-img {
   width: 45%;
   height: 300px;
-  background: #ccc;
   border-radius: 12px;
   margin: 0;
+  overflow: hidden;
+}
 
+.outreach-block.two-col .box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .outreach-block .box-text {
@@ -93,9 +177,7 @@ body {
   max-width: 45%;
   margin: 0;
   order: 2;
-
 }
-
 
 @media (max-width: 768px) {
   .outreach-block {
@@ -136,7 +218,14 @@ body {
 .gallery-img {
   width: 120px;
   height: 120px;
-  background: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gallery-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
 
