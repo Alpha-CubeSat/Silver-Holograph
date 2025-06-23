@@ -65,6 +65,8 @@ body::before {
   background-color: #0d0d33;
   padding: 1rem 2rem;
   font-size: 14px;
+  z-index: 9999;
+  /* Added for dropdown */
 }
 
 .navbar .logo {
@@ -96,6 +98,49 @@ body::before {
 
 .navbar .nav-links a:hover {
   color: #00ffe5;
+}
+
+/* DROPDOWN STYLES - ADDED */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(13, 13, 51, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 229, 0.3);
+  border-radius: 8px;
+  min-width: 160px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  margin-top: 10px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0, 255, 229, 0.2);
+  color: #00ffe5;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown>a::after {
+  content: ' ▼';
+  font-size: 0.8em;
+  margin-left: 5px;
 }
 
 .hero {
@@ -338,5 +383,18 @@ body::before {
   .footer-right {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  /* Dropdown responsive */
+  .dropdown-content {
+    position: static;
+    display: block;
+    background: rgba(13, 13, 51, 0.8);
+    margin-top: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 }

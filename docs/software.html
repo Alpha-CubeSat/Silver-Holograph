@@ -1,0 +1,386 @@
+<!-- Software Systems Page -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Systems - Sailing To The Stars</title>
+    <link rel="icon" href="images/missionlogo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom, #0E0B21, #1f1849, #4B3DDD) !important;
+            color: white;
+            min-height: 100vh;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image:
+                radial-gradient(2px 2px at 15px 25px, #fff, transparent),
+                radial-gradient(1px 1px at 85px 140px, #fff, transparent),
+                radial-gradient(2px 2px at 220px 60px, #fff, transparent),
+                radial-gradient(1px 1px at 350px 180px, #fff, transparent),
+                radial-gradient(1px 1px at 480px 35px, #fff, transparent),
+                radial-gradient(2px 2px at 620px 120px, #fff, transparent),
+                radial-gradient(1px 1px at 750px 190px, #fff, transparent),
+                radial-gradient(1px 1px at 880px 45px, #fff, transparent),
+                radial-gradient(2px 2px at 1020px 165px, #fff, transparent),
+                radial-gradient(1px 1px at 1150px 85px, #fff, transparent),
+                radial-gradient(1px 1px at 1280px 210px, #fff, transparent),
+                radial-gradient(2px 2px at 1420px 95px, #fff, transparent),
+                radial-gradient(1px 1px at 65px 270px, #fff, transparent),
+                radial-gradient(1px 1px at 195px 320px, #fff, transparent),
+                radial-gradient(2px 2px at 325px 240px, #fff, transparent),
+                radial-gradient(1px 1px at 455px 350px, #fff, transparent),
+                radial-gradient(1px 1px at 585px 280px, #fff, transparent),
+                radial-gradient(2px 2px at 715px 330px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 1500px 400px;
+            animation: twinkle 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.8;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4B3DDD;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(30, 24, 73, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(75, 61, 221, 0.3);
+            border-radius: 8px;
+            min-width: 160px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(75, 61, 221, 0.2);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown>a::after {
+            content: ' ▼';
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #4B3DDD;
+        }
+
+        .content h3 {
+            font-size: 1.8rem;
+            color: #6B5AE0;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .system-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .system-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(75, 61, 221, 0.3);
+        }
+
+        .system-card h4 {
+            color: #4B3DDD;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(75, 61, 221, 0.5);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        .architecture-diagram {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(75, 61, 221, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .layer {
+            background: rgba(75, 61, 221, 0.2);
+            border: 1px solid rgba(75, 61, 221, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .specs-table th {
+            background: rgba(75, 61, 221, 0.3);
+            font-weight: bold;
+        }
+
+        .footer {
+            background: rgba(14, 11, 33, 0.8);
+            padding: 3rem 2rem 1rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer h4 {
+            color: #4B3DDD;
+            margin-bottom: 1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">About Our Mission</a></li>
+            <li><a href="outreach.html">Our Outreach</a></li>
+            <li><a href="timeline.html">Launch Timeline</a></li>
+            <li class="dropdown">
+                <a href="#technicals">Technicals</a>
+                <div class="dropdown-content">
+                    <a href="electrical.html">Electrical</a>
+                    <a href="mechanical.html">Mechanical</a>
+                    <a href="software.html">Software</a>
+                </div>
+            </li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Software Systems</h1>
+    </header>
+
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo">
+                    <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="about-footer">
+                    <h4>About us</h4>
+                    <ul>
+                        <li>About Mission</li>
+                        <li>Our Reach</li>
+                        <li>Our Team</li>
+                        <li>Launch Timeline</li>
+                        <li>Contact us</li>
+                    </ul>
+                </div>
+                <div class="contact-footer">
+                    <h4>Contact us</h4>
+                    <p>124 Hoy Rd, 450 Upson Hall<br>Cornell University<br>Ithaca, NY 14853</p>
+                    <p>sailingtothestarscornell@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/sailing2thestars/" target="_blank">
+                            <img src="images/icons/Instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://github.com/Alpha-CubeSat" target="_blank">
+                            <img src="images/icons/Github.png" alt="Github">
+                        </a>
+                        <a href="https://www.linkedin.com/company/sailing-to-the-stars/" target="_blank">
+                            <img src="images/icons/Linkedin.png" alt="Linkedin">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Alpha Cubesat All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>
