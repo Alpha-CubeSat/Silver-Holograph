@@ -8,8 +8,82 @@
   <title>About Our Mission</title>
   <link rel="stylesheet" href="styles/about.css">
   <link rel="icon" href="images/missionlogo.png" type="image/x-icon">
-
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #0E0B21, #1f1849, #4B3DDD) !important;
+      color: white;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        radial-gradient(2px 2px at 15px 25px, #fff, transparent),
+        radial-gradient(1px 1px at 85px 140px, #fff, transparent),
+        radial-gradient(2px 2px at 220px 60px, #fff, transparent),
+        radial-gradient(1px 1px at 350px 180px, #fff, transparent),
+        radial-gradient(1px 1px at 480px 35px, #fff, transparent),
+        radial-gradient(2px 2px at 620px 120px, #fff, transparent),
+        radial-gradient(1px 1px at 750px 190px, #fff, transparent),
+        radial-gradient(1px 1px at 880px 45px, #fff, transparent),
+        radial-gradient(2px 2px at 1020px 165px, #fff, transparent),
+        radial-gradient(1px 1px at 1150px 85px, #fff, transparent),
+        radial-gradient(1px 1px at 1280px 210px, #fff, transparent),
+        radial-gradient(2px 2px at 1420px 95px, #fff, transparent),
+        radial-gradient(1px 1px at 65px 270px, #fff, transparent),
+        radial-gradient(1px 1px at 195px 320px, #fff, transparent),
+        radial-gradient(2px 2px at 325px 240px, #fff, transparent),
+        radial-gradient(1px 1px at 455px 350px, #fff, transparent),
+        radial-gradient(1px 1px at 585px 280px, #fff, transparent),
+        radial-gradient(2px 2px at 715px 330px, #fff, transparent);
+      background-repeat: repeat;
+      background-size: 1500px 400px;
+      animation: twinkle 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0.8;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+    .navbar,
+    .hero,
+    .mission,
+    .social,
+    .footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-links a,
+    .hero-overlay,
+    .mission-points,
+    .social-grid,
+    .insta-post,
+    .footer-left,
+    .footer-right,
+    .copyright {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -17,7 +91,7 @@
     <div class="logo">
       <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
     </div>
-    <!-- <div class="logo">Sailing To The Stars</div> -->
+    <div class="logo">Sailing To The Stars</div>
     <ul class="nav-links">
       <li><a href="index.html">About Our Mission</a></li>
       <li><a href="outreach.html">Our Outreach</a></li>
@@ -35,7 +109,7 @@
 
   <section class="mission">
     <h2>Mission Description</h2>
-    <p><a href="https://alphacubesat.cornell.edu/">Alpha Cubesat</a>will deploy the first-ever
+    <p><a href="https://alphacubesat.cornell.edu/">Alpha Cubesat</a> will deploy the first-ever
       free-flying,
       retroreflective light sail. Its tiny ChipSat computers also
       allow Alpha to be the smallest light sail yet. Someday, we may send an entire fleet of these light sails to other
@@ -44,9 +118,9 @@
       <div>
         <h3>01 Hang On, What are Lightsails?</h3>
         <p>Light sails are a lot like boat sails. But instead of being pushed by wind, light sails are pushed by the
-          actual particles of light (photons) that strike them. This means light sails don’t need to chuck any
+          actual particles of light (photons) that strike them. This means light sails don't need to chuck any
           propellant behind them like a typical rocket or spacecraft—no heavy fuel tanks to carry, or even any engines.
-          That’s especially helpful in long-term missions to another star.</p>
+          That's especially helpful in long-term missions to another star.</p>
       </div>
       <div>
         <h3>02 LOREM IPSU</h3>
@@ -100,9 +174,6 @@
           <a href="https://www.linkedin.com/company/sailing-to-the-stars/" target="_blank">
             <img src="images/icons/Linkedin.png" alt="Linkedin">
           </a>
-
-          <!-- used alpha github as the link? -->
-
         </div>
       </div>
     </div>
