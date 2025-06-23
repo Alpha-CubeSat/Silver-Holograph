@@ -105,9 +105,8 @@ h7 {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   text-align: center;
   margin: 5px 0 5px;
-  /* Smaller top margin to stick closer to h6 */
   display: block;
-  /* Ensure h7 behaves like a block-level element */
+
 }
 
 .margin-top-20 {
@@ -206,7 +205,7 @@ body {
 }
 
 .nav-link {
-  /* original: padding: 5px 20px */
+
   padding: 5px 15px !important;
 }
 
@@ -368,13 +367,13 @@ img {
 .img-caption {
   background-color: #0a092682;
   color: white;
-  /* Text color for the caption */
+
   position: absolute;
   bottom: 0;
   left: 20%;
   right: 10%;
   width: 90%;
-  /* Make the caption width 100% to fit the whole bottom */
+
   padding: 10px;
   text-align: center;
 }
@@ -435,7 +434,7 @@ p.carousel {
   padding: 10%;
 }
 
-/* to invert the color of the controls */
+
 .carousel-control-next,
 .carousel-control-prev {
   /* filter: invert(100%); */
