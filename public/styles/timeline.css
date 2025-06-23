@@ -1,121 +1,341 @@
 body {
-    margin: 0;
-    background: linear-gradient(to bottom, #0f0f4f, #2b2c88);
-    color: white;
-    font-family: 'Orbitron', sans-serif;
-  }
-  
+  margin: 0;
+  background: linear-gradient(to bottom, #0E0B21, #1f1849, #4B3DDD);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(2px 2px at 15px 25px, #fff, transparent),
+    radial-gradient(1px 1px at 85px 140px, #fff, transparent),
+    radial-gradient(2px 2px at 220px 60px, #fff, transparent),
+    radial-gradient(1px 1px at 350px 180px, #fff, transparent),
+    radial-gradient(1px 1px at 480px 35px, #fff, transparent),
+    radial-gradient(2px 2px at 620px 120px, #fff, transparent),
+    radial-gradient(1px 1px at 750px 190px, #fff, transparent),
+    radial-gradient(1px 1px at 880px 45px, #fff, transparent),
+    radial-gradient(2px 2px at 1020px 165px, #fff, transparent),
+    radial-gradient(1px 1px at 1150px 85px, #fff, transparent),
+    radial-gradient(1px 1px at 1280px 210px, #fff, transparent),
+    radial-gradient(2px 2px at 1420px 95px, #fff, transparent),
+    radial-gradient(1px 1px at 65px 270px, #fff, transparent),
+    radial-gradient(1px 1px at 195px 320px, #fff, transparent),
+    radial-gradient(2px 2px at 325px 240px, #fff, transparent),
+    radial-gradient(1px 1px at 455px 350px, #fff, transparent),
+    radial-gradient(1px 1px at 585px 280px, #fff, transparent),
+    radial-gradient(2px 2px at 715px 330px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 1500px 400px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0d0d33;
+  padding: 1rem 2rem;
+  font-size: 14px;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #00ffe5;
+}
+
+.timeline-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.timeline-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+}
+
+.timeline-header p {
+  margin: 1rem auto;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.timeline-header img {
+  width: 250px;
+  margin-top: 2rem;
+}
+
+.timeline {
+  position: relative;
+  margin: 4rem auto;
+  padding: 2rem;
+  max-width: 1000px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 80px;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom, #5f5fe6, #9c9cf2);
+  border-radius: 4px;
+}
+
+.timeline-event {
+  position: relative;
+  margin: 4rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  min-height: 120px;
+}
+
+.timeline-event .circle {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  border: 4px solid #5f5fe6;
+  z-index: 2;
+  position: relative;
+  flex-shrink: 0;
+  margin-left: 55px;
+  margin-top: 10px;
+}
+
+.timeline-event .event-text {
+  flex: 1;
+  max-width: 500px;
+  margin-top: 10px;
+}
+
+.timeline-event .event-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #00ffe5;
+}
+
+.timeline-event .event-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Image styling for timeline events */
+.timeline-event .event-image {
+  width: 200px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #5f5fe6;
+  border-radius: 10px;
+  flex-shrink: 0;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-event .event-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(95, 95, 230, 0.3);
+}
+
+.timeline-event .event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.footer {
+  background-color: #0a0a1a;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 14px;
+  border-top: 2px solid #5f5fe6;
+  position: relative;
+}
+
+.footer-left {
+  flex: 1 1 300px;
+  margin-bottom: 2rem;
+}
+
+.footer-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffe5;
+  margin-bottom: 1rem;
+}
+
+.footer-right {
+  display: flex;
+  gap: 3rem;
+  flex: 2 1 600px;
+  justify-content: flex-end;
+}
+
+.about-footer,
+.contact-footer {
+  flex: 1;
+  min-width: 200px;
+}
+
+.about-footer h4,
+.contact-footer h4 {
+  color: #00ffe5;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.about-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-footer ul li {
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.about-footer ul li:hover {
+  color: #00ffe5;
+}
+
+.contact-footer p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.3);
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #5f5fe6;
+  color: #9c9cf2;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #0d0d33;
-    padding: 1rem 2rem;
-    font-size: 14px;
-  }
-  
-  .navbar .logo {
-    font-weight: bold;
-  }
-  
-  .navbar .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-  }
-  
-  .navbar .nav-links a {
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-  }
-  
-  .navbar .nav-links a:hover {
-    color: #00ffe5;
-  }
-  
-  .timeline-hero {
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-  
-  .timeline-header h1 {
-    font-size: 2.5rem;
-  }
-  
-  .timeline-header p {
-    margin: 1rem auto;
-    max-width: 600px;
-  }
-  
-  .timeline-header img {
-    width: 250px;
-    margin-top: 2rem;
-  }
-  
-  .timeline {
-    position: relative;
-    margin: 4rem auto;
-    padding: 2rem;
-    max-width: 800px;
-  }
-  
-  .timeline-line {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 8px;
-    height: 100%;
-    background: linear-gradient(to bottom, #5f5fe6, #9c9cf2);
-  }
-  
-  .timeline-event {
-    position: relative;
-    margin: 3rem 0;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  
-  .timeline-event .circle {
-    width: 50px;
-    height: 50px;
-    background: white;
-    border-radius: 50%;
-    border: 4px solid #5f5fe6;
-    z-index: 2;
-  }
-  
-  .timeline-event .event-text {
-    margin-top: 1rem;
+    gap: 1rem;
     text-align: center;
-    max-width: 400px;
   }
-  
-  .event-text h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .event-text p {
-    font-size: 0.95rem;
-  }
-  
-  .footer {
-    background-color: #0a0a1a;
-    padding: 2rem;
-    display: flex;
+
+  .navbar .nav-links {
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 14px;
   }
-  
-  .footer-left, .footer-right {
-    flex: 1 1 300px;
+
+  .timeline-line {
+    left: 30px;
   }
-  
+
+  .timeline-event .circle {
+    margin-left: 5px;
+  }
+
+  .timeline-event {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .timeline-event .event-image {
+    width: 100%;
+    max-width: 300px;
+    margin-left: 75px;
+  }
+
+  .timeline-header h1 {
+    font-size: 2rem;
+  }
+
+  .timeline-header img {
+    width: 200px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .footer-right {
-    display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 2rem;
   }
-  
-  .footer
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    padding: 1rem;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-event .circle {
+    margin-left: -5px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .timeline-event .event-image {
+    margin-left: 55px;
+  }
+}
