@@ -78,6 +78,8 @@
     .typing-container {
       position: relative;
       display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
     }
 
     .typing-text {
@@ -85,6 +87,8 @@
       color: white !important;
       font-family: 'Orbitron', sans-serif;
       font-size: 2.5rem;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     .cursor {
@@ -558,8 +562,30 @@
       width: 100% !important;
     }
 
-    /* Responsive adjustments */
+    /*resposive adjustments */
     @media (max-width: 768px) {
+
+      /* fix logo centering on mobile */
+      .navbar .logo {
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+      }
+
+
+      .mission h2 {
+        font-size: 1.8rem !important;
+        min-height: 2.5rem !important;
+      }
+
+      .typing-text {
+        font-size: 1.8rem !important;
+      }
+
+      .cursor {
+        height: 1.8rem !important;
+      }
+
       .news-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -585,14 +611,6 @@
 
       .social {
         padding: 60px 0;
-      }
-
-      .mission h2 {
-        font-size: 2rem;
-      }
-
-      .cursor {
-        height: 2rem;
       }
 
       .footer-content {
@@ -634,6 +652,21 @@
     }
 
     @media (max-width: 480px) {
+
+      /*reduce typing text size for very small screens */
+      .mission h2 {
+        font-size: 1.4rem !important;
+        min-height: 2rem !important;
+      }
+
+      .typing-text {
+        font-size: 1.4rem !important;
+      }
+
+      .cursor {
+        height: 1.4rem !important;
+      }
+
       .insta-post {
         flex: 0 0 180px;
         height: 180px;
@@ -643,13 +676,41 @@
       .insta-post img {
         border-radius: 12px;
       }
+    }
 
+    /* additional breakpoint for very narrow screens */
+    @media (max-width: 360px) {
       .mission h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem !important;
+        min-height: 1.8rem !important;
+      }
+
+      .typing-text {
+        font-size: 1.2rem !important;
       }
 
       .cursor {
-        height: 1.5rem;
+        height: 1.2rem !important;
+      }
+    }
+
+    /* ensure typing container doesn't overflow which will shift everything down if it does break */
+    @media (max-width: 320px) {
+      .typing-container {
+        max-width: 90vw;
+      }
+
+      .mission h2 {
+        font-size: 1rem !important;
+        min-height: 1.5rem !important;
+      }
+
+      .typing-text {
+        font-size: 1rem !important;
+      }
+
+      .cursor {
+        height: 1rem !important;
       }
     }
   </style>
