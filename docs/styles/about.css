@@ -242,6 +242,16 @@ body::before {
   flex-wrap: wrap;
 }
 
+.social-username {
+  font-size: 1.4rem;
+  margin-top: 50px;
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: block;
+}
+
 .insta-post {
   width: 100px;
   height: 100px;
@@ -334,7 +344,7 @@ body::before {
   margin-top: 1rem;
 }
 
-/* Responsive Design */
+/* responsive Design */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -385,7 +395,7 @@ body::before {
     gap: 2rem;
   }
 
-  /* Dropdown responsive */
+  /* dropdown responsive */
   .dropdown-content {
     position: static;
     display: block;
