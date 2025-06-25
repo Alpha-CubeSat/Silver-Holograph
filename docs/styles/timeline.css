@@ -237,8 +237,11 @@ body::before {
 }
 
 .timeline-event .event-text {
+  margin-left: 65px;
+  max-width: calc(100%-65px);
+
   flex: 1;
-  max-width: 500px;
+  max-width: calc(100%-75px);
   margin-top: 10px;
 }
 
