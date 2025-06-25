@@ -183,11 +183,11 @@ body::before {
   margin: 4rem 0;
 }
 
-.meet-team h2 {
+/* .meet-team h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #00ffe5;
-}
+} */
 
 .team-grid {
   display: grid;
@@ -226,7 +226,7 @@ body::before {
 .name {
   margin-top: 0.8rem;
   font-size: 1rem;
-  color: #00ffe5;
+  color: #E87D0E;
   font-weight: 600;
 }
 
