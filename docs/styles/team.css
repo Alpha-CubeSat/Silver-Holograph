@@ -112,7 +112,6 @@ body::before {
   min-width: 160px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   z-index: 10000;
-  margin-top: 10px;
 }
 
 .dropdown-content a {

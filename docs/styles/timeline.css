@@ -113,7 +113,7 @@ body::before {
   min-width: 160px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   z-index: 10000;
-  margin-top: 10px;
+  /* Removed margin-top: 10px; to fix the dropdown gap issue */
 }
 
 .dropdown-content a {
@@ -453,10 +453,9 @@ body::before {
     left: 50%;
     transform: translateX(-50%);
     background: rgba(13, 13, 51, 0.95);
-    margin-top: 0.5rem;
     border-radius: 8px;
     min-width: 160px;
-
+    /* No margin-top here either for mobile */
   }
 
   .dropdown:hover .dropdown-content {
