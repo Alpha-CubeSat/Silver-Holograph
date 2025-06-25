@@ -238,7 +238,7 @@ body::before {
 
 .timeline-event .event-text {
   flex: 1;
-  max-width: 500px;
+  max-width: 600px;
   margin-top: 10px;
 }
 
