@@ -1,134 +1,520 @@
 body {
-    margin: 0;
-    background: linear-gradient(to bottom, #0f0f4f, #2b2c88);
-    color: white;
-    font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  background: linear-gradient(to bottom, #0E0B21, #1f1849, #4B3DDD);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(2px 2px at 15px 25px, #fff, transparent),
+    radial-gradient(1px 1px at 85px 140px, #fff, transparent),
+    radial-gradient(2px 2px at 220px 60px, #fff, transparent),
+    radial-gradient(1px 1px at 350px 180px, #fff, transparent),
+    radial-gradient(1px 1px at 480px 35px, #fff, transparent),
+    radial-gradient(2px 2px at 620px 120px, #fff, transparent),
+    radial-gradient(1px 1px at 750px 190px, #fff, transparent),
+    radial-gradient(1px 1px at 880px 45px, #fff, transparent),
+    radial-gradient(2px 2px at 1020px 165px, #fff, transparent),
+    radial-gradient(1px 1px at 1150px 85px, #fff, transparent),
+    radial-gradient(1px 1px at 1280px 210px, #fff, transparent),
+    radial-gradient(2px 2px at 1420px 95px, #fff, transparent),
+    radial-gradient(1px 1px at 65px 270px, #fff, transparent),
+    radial-gradient(1px 1px at 195px 320px, #fff, transparent),
+    radial-gradient(2px 2px at 325px 240px, #fff, transparent),
+    radial-gradient(1px 1px at 455px 350px, #fff, transparent),
+    radial-gradient(1px 1px at 585px 280px, #fff, transparent),
+    radial-gradient(2px 2px at 715px 330px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 1500px 400px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.8;
   }
-  
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.navbar,
+.team-hero,
+.meet-team,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* NAVBAR STYLING */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #0d0d33;
+  font-size: 14px;
+  z-index: 9999;
+}
+
+.navbar .logo {
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #00ffe5;
+}
+
+.navbar .logo img {
+  height: 50px;
+  width: auto;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(13, 13, 51, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 229, 0.3);
+  border-radius: 8px;
+  min-width: 160px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  margin-top: 10px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0, 255, 229, 0.2);
+  color: #00ffe5;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown>a::after {
+  content: ' ▼';
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+/*team specific styling*/
+.team-hero {
+  padding: 3rem 1rem;
+}
+
+.team-header {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-text-content {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.team-header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.team-intro p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.team-header img {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  margin-top: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.meet-team {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.meet-team h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00ffe5;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  justify-items: center;
+}
+
+.team-member {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border: 2px solid #5f5fe6;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.team-member:hover img {
+  box-shadow: 0 8px 25px rgba(95, 95, 230, 0.3);
+  border-color: #00ffe5;
+}
+
+.name {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: #00ffe5;
+  font-weight: 600;
+}
+
+/* FOOTER STYLING */
+.footer {
+  background: #070707 !important;
+  background-color: #070707 !important;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 255, 229, 0.2);
+  padding: 40px 20px 20px !important;
+  margin-top: 80px;
+  display: flex !important;
+  flex-direction: column !important;
+  font-size: 14px !important;
+}
+
+.footer-content {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 80px;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 200px;
+}
+
+.footer-logo {
+  flex: 0 0 auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-align: left !important;
+  align-self: stretch !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.footer-logo img {
+  height: 240px !important;
+  width: 240px !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-right-content {
+  display: flex !important;
+  gap: 60px !important;
+  align-items: flex-start !important;
+  flex-wrap: wrap !important;
+  margin-left: auto !important;
+}
+
+.footer-nav,
+.footer-contact,
+.footer-social {
+  flex: 0 0 auto !important;
+  min-width: 180px !important;
+}
+
+.footer-nav h4,
+.footer-contact h4,
+.footer-social h4 {
+  font-family: 'Orbitron', sans-serif !important;
+  color: #00ffe5 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 15px !important;
+  font-weight: 600;
+}
+
+.footer-nav ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-nav ul li {
+  margin-bottom: 8px !important;
+  cursor: default !important;
+}
+
+.footer-nav ul li a {
+  color: #b8b8b8 !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  transition: color 0.3s ease !important;
+}
+
+.footer-nav ul li a:hover,
+.footer-nav ul li:hover {
+  color: #00ffe5 !important;
+}
+
+.footer-contact p {
+  color: #b8b8b8 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 10px !important;
+}
+
+.footer-social .social-icons {
+  display: flex !important;
+  gap: 15px !important;
+  flex-wrap: wrap;
+  margin-top: 1rem !important;
+}
+
+.footer-social .social-icons a {
+  display: flex !important;
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50% !important;
+  background: rgba(0, 255, 229, 0.1) !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer-social .social-icons a:hover {
+  background: rgba(0, 255, 229, 0.2) !important;
+  border-color: rgba(0, 255, 229, 0.6) !important;
+  transform: translateY(-2px) !important;
+}
+
+.footer-social .social-icons a img {
+  width: 20px !important;
+  height: 20px !important;
+  transition: filter 0.3s ease !important;
+}
+
+.footer-social .social-icons a:hover img {
+  filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(180deg) !important;
+}
+
+.copyright {
+  text-align: center !important;
+  color: #888 !important;
+  font-size: 0.85rem !important;
+  margin-top: 30px !important;
+  padding-top: 20px !important;
+  border-top: 1px solid rgba(0, 255, 229, 0.1) !important;
+  width: 100% !important;
+}
+
+.footer-left,
+.footer-right {
+  display: none;
+}
+
+.about-footer,
+.contact-footer {
+  display: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #0d0d33;
-    padding: 1rem 2rem;
-    font-size: 14px;
-  }
-  
-  .navbar .logo {
-    font-weight: bold;
-  }
-  
-  .navbar .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-  }
-  
-  .navbar .nav-links a {
-    text-decoration: none;
-    color: white;
-    transition: 0.3s;
-  }
-  
-  .navbar .nav-links a:hover {
-    color: #00ffe5;
-  }
-  
-  .team-hero {
-    padding: 3rem 1rem;
+    flex-direction: column;
+    gap: 1rem;
     text-align: center;
   }
-  
+
+  .navbar .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 13, 51, 0.95);
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    min-width: 160px;
+
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .team-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .team-text-content {
+    text-align: center;
+  }
+
   .team-header h1 {
     font-size: 2.5rem;
   }
-  
+
   .team-intro p {
-    margin: 1rem auto;
-    max-width: 600px;
+    max-width: 100%;
+    text-align: center;
   }
-  
+
   .team-header img {
-    width: 300px;
-    margin-top: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,255,255,0.2);
-  }
-  
-  .meet-team {
-    text-align: center;
-    margin: 4rem 0;
-  }
-  
-  .meet-team h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .team-member {
-    text-align: center;
-  }
-  
-  .team-member img {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  }
-  
-  .name {
-    margin-top: 0.8rem;
-    font-size: 1rem;
-    color: #ff9933;
-  }
-  
-  .footer {
-    background-color: #0a0a1a;
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-size: 14px;
-  }
-  
-  .footer-left, .footer-right {
-    flex: 1 1 300px;
-  }
-  
-  .footer-right {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .footer-right h4 {
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-right ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-right ul li {
-    margin-bottom: 0.3rem;
-  }
-  
-  .social-icons img {
-    width: 24px;
-    margin-right: 0.5rem;
-  }
-  
-  .copyright {
-    text-align: center;
     width: 100%;
-    padding-top: 1rem;
-    font-size: 12px;
-    color: #aaa;
+    max-width: 450px;
+    height: 300px;
   }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .team-member img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .footer-content {
+    flex-direction: column !important;
+    gap: 30px !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .footer-logo {
+    align-self: center !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    text-align: center !important;
+  }
+
+  .footer-logo img {
+    height: 140px !important;
+    width: 140px !important;
+  }
+
+  .footer-right-content {
+    flex-direction: column !important;
+    gap: 30px !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+  }
+
+  .footer-nav,
+  .footer-contact,
+  .footer-social {
+    min-width: auto !important;
+    text-align: center !important;
+  }
+
+  .footer-social .social-icons {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-header {
+    padding: 0 0.5rem;
+  }
+
+  .team-header h1 {
+    font-size: 2rem;
+  }
+
+  .team-header img {
+    width: 100%;
+    max-width: 350px;
+    height: 240px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .team-member img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .meet-team h2 {
+    font-size: 1.5rem;
+  }
+}

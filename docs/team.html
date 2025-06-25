@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Team</title>
   <link rel="stylesheet" href="styles/team.css" />
+  <link rel="icon" href="images/missionlogo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <nav class="navbar">
-    <div class="logo">Sailing To The Stars</div>
+    <div class="logo">
+      <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
+    </div>
     <ul class="nav-links">
       <li><a href="index.html">About Our Mission</a></li>
       <li><a href="outreach.html">Our Outreach</a></li>
       <li><a href="timeline.html">Launch Timeline</a></li>
+      <li class="dropdown">
+        <a href="#technicals">Technicals</a>
+        <div class="dropdown-content">
+          <a href="electrical.html">Electrical</a>
+          <a href="mechanical.html">Mechanical</a>
+          <a href="software.html">Software</a>
+        </div>
+      </li>
       <li><a href="team.html">Our Team</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -22,90 +34,115 @@
 
   <section class="team-hero">
     <div class="team-header">
-      <h1>About our team</h1>
-      <div class="team-intro">
-        <p>We were fortunate to have a great team this year who made this incredible project a reality.</p>
+      <div class="team-text-content">
+        <h1>Meet the team!</h1>
+        <div class="team-intro">
+          <p>We were fortunate to have a great team this year who made this incredible project a reality.</p>
+        </div>
       </div>
-      <img src="images/group-photo.jpg" alt="Group Team Photo" />
+      <img src="images/team/group_photo.png" alt="Group Team Photo" />
     </div>
   </section>
 
   <section class="meet-team">
-    <h2>Meet the Team!</h2>
+    <h2></h2>
     <div class="team-grid">
 
-      <!-- Each person card -->
+      <!--TODO: ADD YEAR, MAJOR-->
+
+      <!--  prson cards -->
       <div class="team-member">
-        <img src="images/team/verena_padress.jpg" alt="Verena Padress">
-        <p class="name">Verena Padress</p>
+        <img src="images/team/verena_padres.png" alt="Verena Padress">
+        <p class="name">Verena Padres</p>
       </div>
 
       <div class="team-member">
-        <img src="images/team/ethan_francolla.jpg" alt="Ethan Francolla">
+        <img src="images/team/ethan_francolla.png" alt="Ethan Francolla">
         <p class="name">Ethan Francolla</p>
       </div>
 
       <div class="team-member">
-        <img src="images/team/gabriella_elcsics.jpg" alt="Gabriella Elcsics">
+        <img src="images/team/gabriella_elcsics.png" alt="Gabriella Elcsics">
         <p class="name">Gabriella Elcsics</p>
       </div>
 
       <div class="team-member">
-        <img src="images/team/claire_kim.jpg" alt="Claire Kim">
+        <img src="images/team/clarie_kim.png" alt="Claire Kim">
         <p class="name">Claire Kim</p>
       </div>
 
       <div class="team-member">
-        <img src="images/team/dionna_parina.jpg" alt="Dionna Parina">
+        <img src="images/team/dionna_parina.png" alt="Dionna Parina">
         <p class="name">Dionna Parina</p>
       </div>
 
       <div class="team-member">
-        <img src="images/team/parishee_bajaj.jpg" alt="Parishee Bajaj">
+        <img src="images/team/parishee_bajaj.png" alt="Parishee Bajaj">
         <p class="name">Parishee Bajaj</p>
       </div>
 
       <div class="team-member">
-        <img src="images/team/shashank_chalamalasetty.jpg" alt="Shashank Chalamalasetty">
+        <img src="images/team/shashank.png" alt="Shashank Chalamalasetty">
         <p class="name">Shashank Chalamalasetty</p>
       </div>
 
       <div class="team-member">
-        <img src="images/team/cameron_goodard.jpg" alt="Cameron Goodard">
+        <img src="images/team/cameron.png" alt="Cameron Goodard">
         <p class="name">Cameron Goodard</p>
       </div>
 
     </div>
   </section>
 
-  <footer class="footer" id="contact">
-    <div class="footer-left">
-      <div class="logo">Logo Here</div>
-    </div>
-    <div class="footer-right">
-      <div class="about-footer">
-        <h4>About us</h4>
-        <ul>
-          <li>About Mission</li>
-          <li>Our Reach</li>
-          <li>Our Team</li>
-          <li>Launch Timeline</li>
-          <li>Contact us</li>
-        </ul>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
       </div>
-      <div class="contact-footer">
-        <h4>Contact us</h4>
-        <p>124 Hoy Rd, 450 Upson Hall<br>Cornell University<br>Ithaca, NY 14853</p>
-        <p>cornellalphacubesat@gmail.com</p>
-        <div class="social-icons">
-          <img src="images/icons/Instagram.png" alt="Instagram">
-          <img src="images/icons/Twitter.png" alt="Twitter">
-          <img src="images/icons/Github.png" alt="Github">
-          <img src="images/icons/Linkedin.png" alt="LinkedIn">
+
+      <div class="footer-right-content">
+        <div class="footer-nav">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">About Mission</a></li>
+            <li><a href="outreach.html">Our Outreach</a></li>
+            <li><a href="timeline.html">Launch Timeline</a></li>
+            <li><a href="mechanical.html">Mechanical</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="electrical.html">Electrical</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact us</h4>
+          <p>124 Hoy Rd, 450 Upson Hall<br>Cornell University<br>Ithaca, NY 14853</p>
+          <p>sailingtothestarscornell@gmail.com</p>
+        </div>
+
+        <div class="footer-social">
+          <h4>Connect with us!</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/sailing2thestars/" target="_blank">
+              <img src="images/icons/instagram_logo.png" alt="Instagram"
+                style="width: 30px !important; height: 30px !important; filter: none !important;">
+            </a>
+            <a href="https://github.com/Alpha-CubeSat" target="_blank">
+              <img src="images/icons/github_logo.png" alt="Github"
+                style="width: 30px !important; height: 30px !important; filter: none !important;">
+            </a>
+            <a href="https://www.linkedin.com/company/sailing-to-the-stars/" target="_blank">
+              <img src="images/icons/linkedin_logo.png" alt="LinkedIn"
+                style="width: 30px !important; height: 30px !important; filter: none !important;">
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
     <p class="copyright">© 2025 Alpha Cubesat All Rights Reserved</p>
   </footer>
 </body>
+
 </html>

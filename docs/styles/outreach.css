@@ -464,7 +464,7 @@ body::before {
   display: none;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -475,6 +475,22 @@ body::before {
   .navbar .nav-links {
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 13, 51, 0.95);
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    min-width: 160px;
+
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 
   .outreach-header {
@@ -559,18 +575,6 @@ body::before {
 
   .footer-social .social-icons {
     justify-content: center !important;
-  }
-
-  .dropdown-content {
-    position: static;
-    display: block;
-    background: rgba(13, 13, 51, 0.8);
-    margin-top: 0.5rem;
-    border-radius: 4px;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
   }
 }
 
