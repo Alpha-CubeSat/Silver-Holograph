@@ -228,20 +228,17 @@ body::before {
   height: 50px;
   background: white;
   border-radius: 50%;
-  border: 4px solid #5f5fe6;
+  border: 2px solid #5f5fe6;
   z-index: 2;
   position: relative;
   flex-shrink: 0;
-  margin-left: 55px;
+  margin-left: 25px;
   margin-top: 10px;
 }
 
 .timeline-event .event-text {
-  margin-left: 65px;
-  max-width: calc(100%-65px);
-
   flex: 1;
-  max-width: calc(100%-75px);
+  max-width: 500px;
   margin-top: 10px;
 }
 
@@ -471,13 +468,19 @@ body::before {
   }
 
   .timeline-event .circle {
-    margin-left: 5px;
+    margin-left: -8px;
+    border: 2px solid #5f5fe6;
   }
 
   .timeline-event {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+
+  .timeline-event .event-text {
+    margin-left: 75px;
+    max-width: calc(100% - 75px);
   }
 
   .timeline-event .event-image {
@@ -542,9 +545,15 @@ body::before {
   }
 
   .timeline-event .circle {
-    margin-left: -5px;
+    margin-left: -12px;
     width: 40px;
     height: 40px;
+    border: 2px solid #5f5fe6;
+  }
+
+  .timeline-event .event-text {
+    margin-left: 65px;
+    max-width: calc(100% - 65px);
   }
 
   .timeline-event .event-image {
