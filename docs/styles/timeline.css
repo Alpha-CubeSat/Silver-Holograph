@@ -256,8 +256,8 @@ body::before {
 
 /* image styling for timeline events */
 .timeline-event .event-image {
-  width: 200px;
-  height: 150px;
+  width: 400px;
+  height: 300px;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid #5f5fe6;
   border-radius: 10px;
