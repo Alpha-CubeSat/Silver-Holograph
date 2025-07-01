@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanical Systems - Sailing To The Stars</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mechanical Systems - Sailing to the Stars</title>
     <link rel="icon" href="images/missionlogo.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -62,8 +61,7 @@
         }
 
         .navbar,
-        .hero,
-        .content,
+        .main-content,
         .footer {
             position: relative;
             z-index: 1;
@@ -75,6 +73,7 @@
             padding: 1rem 2rem;
             background-color: #0d0d33;
             font-size: 14px;
+            z-index: 9999;
         }
 
         .navbar .logo {
@@ -85,6 +84,9 @@
             display: flex;
             list-style: none;
             gap: 1.2rem;
+            margin: 0;
+            padding: 0;
+            align-items: center;
         }
 
         .navbar .nav-links a {
@@ -111,14 +113,13 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background: rgba(30, 24, 73, 0.95);
+            background: rgba(13, 13, 51, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(75, 61, 221, 0.3);
+            border: 1px solid rgba(0, 255, 229, 0.3);
             border-radius: 8px;
             min-width: 160px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            z-index: 1001;
-            margin-top: 10px;
+            z-index: 10000;
         }
 
         .dropdown-content a {
@@ -130,7 +131,8 @@
         }
 
         .dropdown-content a:hover {
-            background: rgba(75, 61, 221, 0.2);
+            background: rgba(0, 255, 229, 0.2);
+            color: #00ffe5;
         }
 
         .dropdown:hover .dropdown-content {
@@ -143,233 +145,271 @@
             margin-left: 5px;
         }
 
-        .hero {
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin: 0 0 1rem 0;
-            font-weight: 700;
-        }
-
-        .content {
-            margin: 2rem auto;
-            padding: 2rem;
-            max-width: 1000px;
-        }
-
-        .technical-header {
-            text-align: left;
-            margin-bottom: 3rem;
-        }
-
-        .technical-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .technical-header p {
-            font-size: 1rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .cubesat-image {
-            float: right;
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .cubesat-image img {
-            width: 200px;
-            height: auto;
-            border-radius: 10px;
-            border: 2px solid #5f5fe6;
-        }
-
-        .diagram-section {
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .diagram-section h3 {
-            color: #333;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .diagram-image {
-            width: 100%;
-            max-width: 600px;
-            height: 300px;
-            background: #f5f5f5;
-            border: 2px solid #666;
-            border-radius: 10px;
-            margin: 1rem auto;
+        .main-content {
+            min-height: 60vh;
+            padding: 2rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
 
-        .diagram-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 8px;
+        .coming-soon-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
-        .description-text {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-top: 1rem;
-            color: #555;
-        }
-
-        .deployment-section {
-            margin: 4rem 0;
-        }
-
-        .deployment-section h3 {
-            font-size: 1.8rem;
+        .coming-soon-section h1 {
+            font-size: 4rem;
             margin-bottom: 2rem;
+            line-height: 1.2;
+            background: linear-gradient(45deg, #00ffe5, #4B3DDD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .coming-soon-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             color: #00ffe5;
         }
 
-        .deployment-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 3rem;
-        }
-
-        .deployment-images {
-            display: flex;
-            gap: 1rem;
-            flex-shrink: 0;
-        }
-
-        .deployment-image {
-            width: 120px;
-            height: 90px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid #5f5fe6;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
-
-        .deployment-image:hover {
-            transform: scale(1.05);
-        }
-
-        .deployment-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .deployment-text {
-            flex: 1;
-        }
-
-        .deployment-text p {
-            font-size: 0.95rem;
+        .coming-soon-section p {
+            font-size: 1.2rem;
             line-height: 1.6;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            color: #b8b8b8;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px rgba(0, 255, 229, 0.5);
+            }
+
+            100% {
+                text-shadow: 0 0 30px rgba(0, 255, 229, 0.8), 0 0 40px rgba(75, 61, 221, 0.5);
+            }
         }
 
         .footer {
-            background-color: #0a0a1a;
-            padding: 2rem;
-            display: flex;
+            background: #070707 !important;
+            background-color: #070707 !important;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 255, 229, 0.2);
+            padding: 40px 20px 20px !important;
+            margin-top: 80px;
+            display: flex !important;
+            flex-direction: column !important;
+            font-size: 14px !important;
+        }
+
+        .footer-content {
+            display: flex !important;
+            justify-content: flex-start !important;
+            align-items: stretch !important;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 80px;
             flex-wrap: wrap;
-            justify-content: space-between;
-            font-size: 14px;
+            width: 100%;
+            min-height: 200px;
         }
 
-        .footer-left,
-        .footer-right {
-            flex: 1 1 300px;
+        .footer-logo {
+            flex: 0 0 auto !important;
+            margin-right: auto !important;
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+            text-align: left !important;
+            align-self: stretch !important;
+            display: flex !important;
+            align-items: center !important;
         }
 
-        .footer-right {
-            display: flex;
-            justify-content: space-around;
+        .footer-logo img {
+            height: 240px !important;
+            width: 240px !important;
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
-        .footer-right h4 {
-            margin-bottom: 0.5rem;
-            color: #00ffe5;
+        .footer-right-content {
+            display: flex !important;
+            gap: 60px !important;
+            align-items: flex-start !important;
+            flex-wrap: wrap !important;
+            margin-left: auto !important;
         }
 
-        .footer-right ul {
-            list-style: none;
-            padding: 0;
+        .footer-nav,
+        .footer-contact,
+        .footer-social {
+            flex: 0 0 auto !important;
+            min-width: 180px !important;
         }
 
-        .footer-right ul li {
-            margin-bottom: 0.3rem;
+        .footer-nav h4,
+        .footer-contact h4,
+        .footer-social h4 {
+            font-family: 'Orbitron', sans-serif !important;
+            color: #00ffe5 !important;
+            font-size: 1.1rem !important;
+            margin-bottom: 15px !important;
+            font-weight: 600;
         }
 
-        .footer .logo img {
-            height: 200px;
-            width: 200px;
+        .footer-nav ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
         }
 
-        .social-icons img {
-            width: 24px;
-            margin-right: 0.5rem;
+        .footer-nav ul li {
+            margin-bottom: 8px !important;
+            cursor: default !important;
+        }
+
+        .footer-nav ul li a {
+            color: #b8b8b8 !important;
+            text-decoration: none !important;
+            font-size: 0.9rem !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .footer-nav ul li a:hover,
+        .footer-nav ul li:hover {
+            color: #00ffe5 !important;
+        }
+
+        .footer-contact p {
+            color: #b8b8b8 !important;
+            font-size: 0.9rem !important;
+            line-height: 1.5 !important;
+            margin-bottom: 10px !important;
+        }
+
+        .footer-social .social-icons {
+            display: flex !important;
+            gap: 15px !important;
+            flex-wrap: wrap;
+            margin-top: 1rem !important;
+        }
+
+        .footer-social .social-icons a {
+            display: flex !important;
+            width: 35px !important;
+            height: 35px !important;
+            border-radius: 50% !important;
+            background: rgba(0, 255, 229, 0.1) !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .footer-social .social-icons a:hover {
+            background: rgba(0, 255, 229, 0.2) !important;
+            border-color: rgba(0, 255, 229, 0.6) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .footer-social .social-icons a img {
+            width: 20px !important;
+            height: 20px !important;
+            transition: filter 0.3s ease !important;
+        }
+
+        .footer-social .social-icons a:hover img {
+            filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(180deg) !important;
         }
 
         .copyright {
-            text-align: center;
-            width: 100%;
-            padding-top: 1rem;
-            font-size: 12px;
-            color: #aaa;
+            text-align: center !important;
+            color: #888 !important;
+            font-size: 0.85rem !important;
+            margin-top: 30px !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(0, 255, 229, 0.1) !important;
+            width: 100% !important;
         }
 
+        /* responsive design */
         @media (max-width: 768px) {
-            .deployment-content {
+            .navbar {
                 flex-direction: column;
-                gap: 2rem;
+                gap: 1rem;
+                text-align: center;
             }
 
-            .sail-components {
-                grid-template-columns: repeat(2, 1fr);
+            .navbar .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
             }
 
-            .cubesat-image {
-                float: none;
-                margin: 1rem auto;
+            .dropdown-content {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(13, 13, 51, 0.95);
+                border-radius: 8px;
+                min-width: 160px;
+            }
+
+            .dropdown:hover .dropdown-content {
                 display: block;
-                text-align: center;
             }
 
-            .technical-header {
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .sail-components {
-                grid-template-columns: 1fr;
+            .coming-soon-section {
+                padding: 2rem 1rem;
             }
 
-            .deployment-images {
-                flex-direction: column;
+            .coming-soon-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .coming-soon-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column !important;
+                gap: 30px !important;
+                text-align: center !important;
+                justify-content: center !important;
+            }
+
+            .footer-logo {
+                align-self: center !important;
+                margin-right: 0 !important;
+                margin-left: 0 !important;
+                text-align: center !important;
+            }
+
+            .footer-logo img {
+                height: 140px !important;
+                width: 140px !important;
+            }
+
+            .footer-right-content {
+                flex-direction: column !important;
+                gap: 30px !important;
+                align-items: center !important;
+                margin-left: 0 !important;
+            }
+
+            .footer-nav,
+            .footer-contact,
+            .footer-social {
+                min-width: auto !important;
+                text-align: center !important;
+            }
+
+            .footer-social .social-icons {
+                justify-content: center !important;
             }
         }
     </style>
@@ -380,11 +420,11 @@
         <div class="logo">
             <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
         </div>
-
         <ul class="nav-links">
             <li><a href="index.html">About Our Mission</a></li>
-            <li><a href="outreach.html">Our Outreach</a></li>
-            <li><a href="timeline.html">Launch Timeline</a></li>
+            <li><a href="lightsails.html">About Lightsails</a></li>
+            <li><a href="deployer.html">The Deployer</a></li>
+            <li><a href="iss.html">ISS Operations</a></li>
             <li class="dropdown">
                 <a href="#technicals">Technicals</a>
                 <div class="dropdown-content">
@@ -393,117 +433,71 @@
                     <a href="software.html">Software</a>
                 </div>
             </li>
+            <li><a href="timeline.html">Launch Timeline</a></li>
+            <li><a href="outreach.html">Our Outreach</a></li>
             <li><a href="team.html">Our Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <h1>Mechanical Systems</h1>
-    </header>
-
-    <section class="content">
-        <div class="technical-header">
-            <div class="cubesat-image">
-                <img src="iimages/whatever" alt="LIGHSAIL Render">
-            </div>
-
-            <h2>BLURB</h2>
-            <p>
-                BLURB
-            </p>
-        </div>
-
-        <div class="diagram-section">
-            <h3>LIGHT SAIL TOP CONFIGURATION</h3>
-            <div class="sail-components">
-                <div class="component">
-                    <div class="component-box">
-                        <img src="images/booms-component.png" alt="Booms Component">
-                    </div>
-                    <div class="component-label">BOOMS</div>
-                </div>
-                <div class="component">
-                    <div class="component-box">
-                        <img src="images/sail-body.png" alt="Sail Body Component">
-                    </div>
-                    <div class="component-label">SAIL BODY</div>
-                </div>
-                <div class="component">
-                    <div class="component-box">
-                        <img src="images/lightsail2.png" alt="LightSail 2 Component">
-                    </div>
-                    <div class="component-label">LIGHTSAIL 2</div>
-                </div>
-                <div class="component">
-                    <div class="component-box">
-                        <img src="images/component.png" alt="Component">
-                    </div>
-                    <div class="component-label">ALPHA</div>
-                </div>
-            </div>
-            <p class="description-text">
-                The compartment holding the light sail takes up half of the CubeSat's volume.
-                Burn wires hold back a spring-loaded latch on the compartment door.
-            </p>
-        </div>
-
-        <div class="deployment-section">
-            <h3>Deployment Process</h3>
-            <div class="deployment-content">
-                <div class="deployment-images">
-                    <div class="deployment-image">
-                        <img src="images/deployment-1.png" alt="Deployment Step 1">
-                    </div>
-                    <div class="deployment-image">
-                        <img src="images/deployment-2.png" alt="Deployment Step 2">
-                    </div>
-                </div>
-                <div class="deployment-text">
-                    <p>
-                        After the CubeSat receives the command to deploy, the burn wires glow and melt the tip and the
-                        first thing open: the compartment holding the light sail unfolds near-instantaneously. Eight
-                        light sails offer about one minute to hours.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main class="main-content">
+        <section class="coming-soon-section">
+            <h1>Coming Soon!</h1>
+            <h2>Mechanical Systems</h2>
+            <p> Check back soon for technical details about our approach to
+                spacecraft mechanical engineering.</p>
+        </section>
+    </main>
 
     <footer class="footer" id="contact">
-        <div class="footer-left">
-            <div class="logo">
+        <div class="footer-content">
+            <div class="footer-logo">
                 <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
             </div>
-        </div>
-        <div class="footer-right">
-            <div class="about-footer">
-                <h4>About us</h4>
-                <ul>
-                    <li>About Mission</li>
-                    <li>Our Reach</li>
-                    <li>Our Team</li>
-                    <li>Launch Timeline</li>
-                    <li>Contact us</li>
-                </ul>
-            </div>
-            <div class="contact-footer">
-                <h4>Contact us</h4>
-                <p>124 Hoy Rd, 450 Upson Hall<br>Cornell University<br>Ithaca, NY 14853</p>
-                <p>sailingtothestarscornell@gmail.com</p>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/sailing2thestars/" target="_blank">
-                        <img src="images/icons/Instagram.png" alt="Instagram">
-                    </a>
-                    <a href="https://github.com/Alpha-CubeSat" target="_blank">
-                        <img src="images/icons/Github.png" alt="Github">
-                    </a>
-                    <a href="https://www.linkedin.com/company/sailing-to-the-stars/" target="_blank">
-                        <img src="images/icons/Linkedin.png" alt="Linkedin">
-                    </a>
+
+            <div class="footer-right-content">
+                <div class="footer-nav">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="index.html">About Mission</a></li>
+                        <li><a href="lightsails.html">About Lightsails</a></li>
+                        <li><a href="deployer.html">The Deployer</a></li>
+                        <li><a href="iss.html">ISS Operations</a></li>
+                        <li><a href="mechanical.html">Mechanical</a></li>
+                        <li><a href="software.html">Software</a></li>
+                        <li><a href="electrical.html">Electrical</a></li>
+                        <li><a href="timeline.html">Launch Timeline</a></li>
+                        <li><a href="outreach.html">Our Outreach</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact us</h4>
+                    <p>124 Hoy Rd, 450 Upson Hall<br>Cornell University<br>Ithaca, NY 14853</p>
+                    <p>sailingtothestarscornell@gmail.com</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect with us!</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/sailing2thestars/" target="_blank">
+                            <img src="images/icons/instagram_logo.png" alt="Instagram"
+                                style="width: 30px !important; height: 30px !important; filter: none !important;">
+                        </a>
+                        <a href="https://github.com/Alpha-CubeSat" target="_blank">
+                            <img src="images/icons/github_logo.png" alt="Github"
+                                style="width: 30px !important; height: 30px !important; filter: none !important;">
+                        </a>
+                        <a href="https://www.linkedin.com/company/sailing-to-the-stars/" target="_blank">
+                            <img src="images/icons/linkedin_logo.png" alt="LinkedIn"
+                                style="width: 30px !important; height: 30px !important; filter: none !important;">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
         <p class="copyright">© 2025 Alpha Cubesat All Rights Reserved</p>
     </footer>
 </body>

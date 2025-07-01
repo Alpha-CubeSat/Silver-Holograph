@@ -1,22 +1,20 @@
-<!-- Software Systems Page -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Systems - Sailing To The Stars</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Software Systems - Sailing to the Stars</title>
     <link rel="icon" href="images/missionlogo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-
     <style>
         body {
             margin: 0;
-            background: linear-gradient(to bottom, #0E0B21, #1f1849, #4B3DDD) !important;
+            background: linear-gradient(to bottom, #0E0B21, #1f1849, #4B3DDD);
             color: white;
+            font-family: 'Orbitron', sans-serif;
             min-height: 100vh;
             position: relative;
-            font-family: Arial, sans-serif;
         }
 
         body::before {
@@ -62,40 +60,48 @@
             }
         }
 
+        .navbar,
+        .main-content,
+        .footer {
+            position: relative;
+            z-index: 1;
+        }
+
         .navbar {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             padding: 1rem 2rem;
-            position: relative;
-            z-index: 1000;
+            background-color: #0d0d33;
+            font-size: 14px;
+            z-index: 9999;
         }
 
-        .logo img {
-            height: 50px;
+        .navbar .logo {
+            font-weight: bold;
         }
 
-        .nav-links {
+        .navbar .nav-links {
             display: flex;
             list-style: none;
+            gap: 1.2rem;
             margin: 0;
             padding: 0;
-            gap: 2rem;
+            align-items: center;
         }
 
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
+        .navbar .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #4B3DDD;
+        .navbar .nav-links a:hover {
+            color: #00ffe5;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+            width: auto;
         }
 
         .dropdown {
@@ -107,14 +113,13 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background: rgba(30, 24, 73, 0.95);
+            background: rgba(13, 13, 51, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(75, 61, 221, 0.3);
+            border: 1px solid rgba(0, 255, 229, 0.3);
             border-radius: 8px;
             min-width: 160px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            z-index: 1001;
-            margin-top: 10px;
+            z-index: 10000;
         }
 
         .dropdown-content a {
@@ -126,7 +131,8 @@
         }
 
         .dropdown-content a:hover {
-            background: rgba(75, 61, 221, 0.2);
+            background: rgba(0, 255, 229, 0.2);
+            color: #00ffe5;
         }
 
         .dropdown:hover .dropdown-content {
@@ -139,177 +145,272 @@
             margin-left: 5px;
         }
 
-        .hero {
+        .main-content {
+            min-height: 60vh;
+            padding: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .coming-soon-section {
             text-align: center;
-            padding: 4rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .content {
-            padding: 2rem;
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            padding: 4rem 2rem;
         }
 
-        .content h2 {
-            font-size: 2.5rem;
-            text-align: center;
+        .coming-soon-section h1 {
+            font-size: 4rem;
             margin-bottom: 2rem;
-            color: #4B3DDD;
+            line-height: 1.2;
+            background: linear-gradient(45deg, #00ffe5, #4B3DDD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
         }
 
-        .content h3 {
-            font-size: 1.8rem;
-            color: #6B5AE0;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .content p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .coming-soon-section h2 {
+            font-size: 2rem;
             margin-bottom: 1.5rem;
+            color: #00ffe5;
         }
 
-        .systems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+        .coming-soon-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #b8b8b8;
         }
 
-        .system-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px rgba(0, 255, 229, 0.5);
+            }
 
-        .system-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(75, 61, 221, 0.3);
-        }
-
-        .system-card h4 {
-            color: #4B3DDD;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .code-block {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(75, 61, 221, 0.5);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            font-family: 'Courier New', monospace;
-            overflow-x: auto;
-        }
-
-        .architecture-diagram {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(75, 61, 221, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .layer {
-            background: rgba(75, 61, 221, 0.2);
-            border: 1px solid rgba(75, 61, 221, 0.5);
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            font-weight: bold;
-        }
-
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .specs-table th,
-        .specs-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .specs-table th {
-            background: rgba(75, 61, 221, 0.3);
-            font-weight: bold;
+            100% {
+                text-shadow: 0 0 30px rgba(0, 255, 229, 0.8), 0 0 40px rgba(75, 61, 221, 0.5);
+            }
         }
 
         .footer {
-            background: rgba(14, 11, 33, 0.8);
-            padding: 3rem 2rem 1rem 2rem;
-            margin-top: 4rem;
-            position: relative;
-            z-index: 1;
+            background: #070707 !important;
+            background-color: #070707 !important;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 255, 229, 0.2);
+            padding: 40px 20px 20px !important;
+            margin-top: 80px;
+            display: flex !important;
+            flex-direction: column !important;
+            font-size: 14px !important;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2rem;
-            max-width: 1200px;
+            display: flex !important;
+            justify-content: flex-start !important;
+            align-items: stretch !important;
+            max-width: 1400px;
             margin: 0 auto;
+            gap: 80px;
+            flex-wrap: wrap;
+            width: 100%;
+            min-height: 200px;
         }
 
-        .footer-right {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+        .footer-logo {
+            flex: 0 0 auto !important;
+            margin-right: auto !important;
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+            text-align: left !important;
+            align-self: stretch !important;
+            display: flex !important;
+            align-items: center !important;
         }
 
-        .footer h4 {
-            color: #4B3DDD;
-            margin-bottom: 1rem;
+        .footer-logo img {
+            height: 240px !important;
+            width: 240px !important;
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
-        .footer ul {
-            list-style: none;
-            padding: 0;
+        .footer-right-content {
+            display: flex !important;
+            gap: 60px !important;
+            align-items: flex-start !important;
+            flex-wrap: wrap !important;
+            margin-left: auto !important;
         }
 
-        .footer ul li {
-            margin-bottom: 0.5rem;
+        .footer-nav,
+        .footer-contact,
+        .footer-social {
+            flex: 0 0 auto !important;
+            min-width: 180px !important;
         }
 
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+        .footer-nav h4,
+        .footer-contact h4,
+        .footer-social h4 {
+            font-family: 'Orbitron', sans-serif !important;
+            color: #00ffe5 !important;
+            font-size: 1.1rem !important;
+            margin-bottom: 15px !important;
+            font-weight: 600;
         }
 
-        .social-icons img {
-            width: 24px;
-            height: 24px;
+        .footer-nav ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 8px !important;
+            cursor: default !important;
+        }
+
+        .footer-nav ul li a {
+            color: #b8b8b8 !important;
+            text-decoration: none !important;
+            font-size: 0.9rem !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .footer-nav ul li a:hover,
+        .footer-nav ul li:hover {
+            color: #00ffe5 !important;
+        }
+
+        .footer-contact p {
+            color: #b8b8b8 !important;
+            font-size: 0.9rem !important;
+            line-height: 1.5 !important;
+            margin-bottom: 10px !important;
+        }
+
+        .footer-social .social-icons {
+            display: flex !important;
+            gap: 15px !important;
+            flex-wrap: wrap;
+            margin-top: 1rem !important;
+        }
+
+        .footer-social .social-icons a {
+            display: flex !important;
+            width: 35px !important;
+            height: 35px !important;
+            border-radius: 50% !important;
+            background: rgba(0, 255, 229, 0.1) !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .footer-social .social-icons a:hover {
+            background: rgba(0, 255, 229, 0.2) !important;
+            border-color: rgba(0, 255, 229, 0.6) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .footer-social .social-icons a img {
+            width: 20px !important;
+            height: 20px !important;
+            transition: filter 0.3s ease !important;
+        }
+
+        .footer-social .social-icons a:hover img {
+            filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(180deg) !important;
         }
 
         .copyright {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            grid-column: 1 / -1;
+            text-align: center !important;
+            color: #888 !important;
+            font-size: 0.85rem !important;
+            margin-top: 30px !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(0, 255, 229, 0.1) !important;
+            width: 100% !important;
+        }
+
+        /* responsive design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .navbar .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .dropdown-content {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(13, 13, 51, 0.95);
+                border-radius: 8px;
+                min-width: 160px;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .coming-soon-section {
+                padding: 2rem 1rem;
+            }
+
+            .coming-soon-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .coming-soon-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column !important;
+                gap: 30px !important;
+                text-align: center !important;
+                justify-content: center !important;
+            }
+
+            .footer-logo {
+                align-self: center !important;
+                margin-right: 0 !important;
+                margin-left: 0 !important;
+                text-align: center !important;
+            }
+
+            .footer-logo img {
+                height: 140px !important;
+                width: 140px !important;
+            }
+
+            .footer-right-content {
+                flex-direction: column !important;
+                gap: 30px !important;
+                align-items: center !important;
+                margin-left: 0 !important;
+            }
+
+            .footer-nav,
+            .footer-contact,
+            .footer-social {
+                min-width: auto !important;
+                text-align: center !important;
+            }
+
+            .footer-social .social-icons {
+                justify-content: center !important;
+            }
         }
     </style>
 </head>
@@ -319,11 +420,11 @@
         <div class="logo">
             <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
         </div>
-
         <ul class="nav-links">
             <li><a href="index.html">About Our Mission</a></li>
-            <li><a href="outreach.html">Our Outreach</a></li>
-            <li><a href="timeline.html">Launch Timeline</a></li>
+            <li><a href="lightsails.html">About Lightsails</a></li>
+            <li><a href="deployer.html">The Deployer</a></li>
+            <li><a href="iss.html">ISS Operations</a></li>
             <li class="dropdown">
                 <a href="#technicals">Technicals</a>
                 <div class="dropdown-content">
@@ -332,53 +433,72 @@
                     <a href="software.html">Software</a>
                 </div>
             </li>
+            <li><a href="timeline.html">Launch Timeline</a></li>
+            <li><a href="outreach.html">Our Outreach</a></li>
             <li><a href="team.html">Our Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <h1>Software Systems</h1>
-    </header>
-
-
+    <main class="main-content">
+        <section class="coming-soon-section">
+            <h1>Coming Soon!</h1>
+            <h2>Software Systems</h2>
+            <p>Check back
+                soon for comprehensive details about our
+                approach to spacecraft software development.</p>
+        </section>
+    </main>
 
     <footer class="footer" id="contact">
         <div class="footer-content">
-            <div class="footer-left">
-                <div class="logo">
-                    <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
-                </div>
+            <div class="footer-logo">
+                <img src="images/missionlogo.png" alt="Sailing To The Stars Logo">
             </div>
-            <div class="footer-right">
-                <div class="about-footer">
-                    <h4>About us</h4>
+
+            <div class="footer-right-content">
+                <div class="footer-nav">
+                    <h4>Pages</h4>
                     <ul>
-                        <li>About Mission</li>
-                        <li>Our Reach</li>
-                        <li>Our Team</li>
-                        <li>Launch Timeline</li>
-                        <li>Contact us</li>
+                        <li><a href="index.html">About Mission</a></li>
+                        <li><a href="lightsails.html">About Lightsails</a></li>
+                        <li><a href="deployer.html">The Deployer</a></li>
+                        <li><a href="iss.html">ISS Operations</a></li>
+                        <li><a href="mechanical.html">Mechanical</a></li>
+                        <li><a href="software.html">Software</a></li>
+                        <li><a href="electrical.html">Electrical</a></li>
+                        <li><a href="timeline.html">Launch Timeline</a></li>
+                        <li><a href="outreach.html">Our Outreach</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="contact-footer">
+                <div class="footer-contact">
                     <h4>Contact us</h4>
                     <p>124 Hoy Rd, 450 Upson Hall<br>Cornell University<br>Ithaca, NY 14853</p>
                     <p>sailingtothestarscornell@gmail.com</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect with us!</h4>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/sailing2thestars/" target="_blank">
-                            <img src="images/icons/Instagram.png" alt="Instagram">
+                            <img src="images/icons/instagram_logo.png" alt="Instagram"
+                                style="width: 30px !important; height: 30px !important; filter: none !important;">
                         </a>
                         <a href="https://github.com/Alpha-CubeSat" target="_blank">
-                            <img src="images/icons/Github.png" alt="Github">
+                            <img src="images/icons/github_logo.png" alt="Github"
+                                style="width: 30px !important; height: 30px !important; filter: none !important;">
                         </a>
                         <a href="https://www.linkedin.com/company/sailing-to-the-stars/" target="_blank">
-                            <img src="images/icons/Linkedin.png" alt="Linkedin">
+                            <img src="images/icons/linkedin_logo.png" alt="LinkedIn"
+                                style="width: 30px !important; height: 30px !important; filter: none !important;">
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+
         <p class="copyright">© 2025 Alpha Cubesat All Rights Reserved</p>
     </footer>
 </body>
