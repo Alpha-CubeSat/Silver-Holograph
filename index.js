@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
-
-app.listen(3000, () => console.log("listening at 3000"))
+const port = process.env.PORT || 3000;
 app.use(express.static("public"));
 app.use(express.json()); //can add limits her in props to protect server
 
@@ -15,3 +14,8 @@ app.post("/api", (request, response) => {
 
 
 
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => console.log(`listening at ${port}`))
+}
+module.exports = app;
