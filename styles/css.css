@@ -852,6 +852,16 @@ p.carousel {
   }
 }
 
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 20px rgba(0, 255, 229, 0.5);
+  }
+
+  100% {
+    text-shadow: 0 0 30px rgba(0, 255, 229, 0.8), 0 0 40px rgba(75, 61, 221, 0.5);
+  }
+}
+
 /* .changeHologram:hover {} */
 
 .vote {

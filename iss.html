@@ -7,477 +7,7 @@
     <title>Sailing to the Stars</title>
     <link rel="icon" href="images/missionlogo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            background: linear-gradient(to bottom, #0E0B21, #1f1849, #4B3DDD);
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            background-image:
-                radial-gradient(2px 2px at 15px 25px, #fff, transparent),
-                radial-gradient(1px 1px at 85px 140px, #fff, transparent),
-                radial-gradient(2px 2px at 220px 60px, #fff, transparent),
-                radial-gradient(1px 1px at 350px 180px, #fff, transparent),
-                radial-gradient(1px 1px at 480px 35px, #fff, transparent),
-                radial-gradient(2px 2px at 620px 120px, #fff, transparent),
-                radial-gradient(1px 1px at 750px 190px, #fff, transparent),
-                radial-gradient(1px 1px at 880px 45px, #fff, transparent),
-                radial-gradient(2px 2px at 1020px 165px, #fff, transparent),
-                radial-gradient(1px 1px at 1150px 85px, #fff, transparent),
-                radial-gradient(1px 1px at 1280px 210px, #fff, transparent),
-                radial-gradient(2px 2px at 1420px 95px, #fff, transparent),
-                radial-gradient(1px 1px at 65px 270px, #fff, transparent),
-                radial-gradient(1px 1px at 195px 320px, #fff, transparent),
-                radial-gradient(2px 2px at 325px 240px, #fff, transparent),
-                radial-gradient(1px 1px at 455px 350px, #fff, transparent),
-                radial-gradient(1px 1px at 585px 280px, #fff, transparent),
-                radial-gradient(2px 2px at 715px 330px, #fff, transparent);
-            background-repeat: repeat;
-            background-size: 1500px 400px;
-            animation: twinkle 4s ease-in-out infinite alternate;
-        }
-
-        @keyframes twinkle {
-            0% {
-                opacity: 0.8;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .navbar,
-        .main-content,
-        .footer {
-            position: relative;
-            z-index: 1;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-            background-color: #0d0d33;
-            font-size: 14px;
-            z-index: 9999;
-        }
-
-        .navbar .logo {
-            font-weight: bold;
-        }
-
-        .navbar .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.2rem;
-            margin: 0;
-            padding: 0;
-            align-items: center;
-        }
-
-        .navbar .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .navbar .nav-links a:hover {
-            color: #00ffe5;
-        }
-
-        .navbar .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: rgba(13, 13, 51, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 229, 0.3);
-            border-radius: 8px;
-            min-width: 160px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            z-index: 10000;
-        }
-
-        .dropdown-content a {
-            display: block;
-            padding: 12px 16px;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-content a:hover {
-            background: rgba(0, 255, 229, 0.2);
-            color: #00ffe5;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown>a::after {
-            content: ' ▼';
-            font-size: 0.8em;
-            margin-left: 5px;
-        }
-
-        .main-content {
-            min-height: 60vh;
-            padding: 2rem 0;
-        }
-
-        .content-section {
-            max-width: 1200px;
-            margin: 0 auto 6rem auto;
-            padding: 0 2rem;
-
-        }
-
-        .section-content {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            min-height: 400px;
-        }
-
-        .section-content-vertical {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .content-section.reverse .section-content {
-            flex-direction: row-reverse;
-        }
-
-        .text-content {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .text-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .text-content p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .text-content-center {
-            text-align: center;
-            max-width: 800px;
-        }
-
-        .text-content-center h1 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-        }
-
-        .image-content {
-            flex: 1;
-            max-width: 500px;
-        }
-
-        .image-content img {
-            width: 100%;
-            height: auto;
-
-        }
-
-        .image-content-large {
-            max-width: 700px;
-            width: 100%;
-        }
-
-        .image-content-large img {
-            width: 100%;
-            height: auto;
-            /* border-radius: 10px;
-            border: 2px solid rgba(0, 255, 229, 0.3); */
-        }
-
-        .innovation-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .innovation-list li {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .innovation-list li::before {
-            content: '●';
-            position: absolute;
-            left: 0;
-            color: #00ffe5;
-            font-size: 1.2rem;
-        }
-
-        .footer {
-            background: #070707 !important;
-            background-color: #070707 !important;
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(0, 255, 229, 0.2);
-            padding: 40px 20px 20px !important;
-            margin-top: 80px;
-            display: flex !important;
-            flex-direction: column !important;
-            font-size: 14px !important;
-        }
-
-        .footer-content {
-            display: flex !important;
-            justify-content: flex-start !important;
-            align-items: stretch !important;
-            max-width: 1400px;
-            margin: 0 auto;
-            gap: 80px;
-            flex-wrap: wrap;
-            width: 100%;
-            min-height: 200px;
-        }
-
-        .footer-logo {
-            flex: 0 0 auto !important;
-            margin-right: auto !important;
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-            text-align: left !important;
-            align-self: stretch !important;
-            display: flex !important;
-            align-items: center !important;
-        }
-
-        .footer-logo img {
-            height: 240px !important;
-            width: 240px !important;
-            display: block !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        .footer-right-content {
-            display: flex !important;
-            gap: 60px !important;
-            align-items: flex-start !important;
-            flex-wrap: wrap !important;
-            margin-left: auto !important;
-        }
-
-        .footer-nav,
-        .footer-contact,
-        .footer-social {
-            flex: 0 0 auto !important;
-            min-width: 180px !important;
-        }
-
-        .footer-nav h4,
-        .footer-contact h4,
-        .footer-social h4 {
-            font-family: 'Orbitron', sans-serif !important;
-            color: #00ffe5 !important;
-            font-size: 1.1rem !important;
-            margin-bottom: 15px !important;
-            font-weight: 600;
-        }
-
-        .footer-nav ul {
-            list-style: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-
-        .footer-nav ul li {
-            margin-bottom: 8px !important;
-            cursor: default !important;
-        }
-
-        .footer-nav ul li a {
-            color: #b8b8b8 !important;
-            text-decoration: none !important;
-            font-size: 0.9rem !important;
-            transition: color 0.3s ease !important;
-        }
-
-        .footer-nav ul li a:hover,
-        .footer-nav ul li:hover {
-            color: #00ffe5 !important;
-        }
-
-        .footer-contact p {
-            color: #b8b8b8 !important;
-            font-size: 0.9rem !important;
-            line-height: 1.5 !important;
-            margin-bottom: 10px !important;
-        }
-
-        .footer-social .social-icons {
-            display: flex !important;
-            gap: 15px !important;
-            flex-wrap: wrap;
-            margin-top: 1rem !important;
-        }
-
-        .footer-social .social-icons a {
-            display: flex !important;
-            width: 35px !important;
-            height: 35px !important;
-            border-radius: 50% !important;
-            background: rgba(0, 255, 229, 0.1) !important;
-            align-items: center !important;
-            justify-content: center !important;
-            transition: all 0.3s ease !important;
-        }
-
-        .footer-social .social-icons a:hover {
-            background: rgba(0, 255, 229, 0.2) !important;
-            border-color: rgba(0, 255, 229, 0.6) !important;
-            transform: translateY(-2px) !important;
-        }
-
-        .footer-social .social-icons a img {
-            width: 20px !important;
-            height: 20px !important;
-            transition: filter 0.3s ease !important;
-        }
-
-        .footer-social .social-icons a:hover img {
-            filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(180deg) !important;
-        }
-
-        .copyright {
-            text-align: center !important;
-            color: #888 !important;
-            font-size: 0.85rem !important;
-            margin-top: 30px !important;
-            padding-top: 20px !important;
-            border-top: 1px solid rgba(0, 255, 229, 0.1) !important;
-            width: 100% !important;
-        }
-
-        /* responsive design */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .navbar .nav-links {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .dropdown-content {
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translateX(-50%);
-                background: rgba(13, 13, 51, 0.95);
-                border-radius: 8px;
-                min-width: 160px;
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .content-section {
-                margin-bottom: 4rem;
-                padding: 0 1rem;
-            }
-
-            .section-content {
-                flex-direction: column;
-                gap: 2rem;
-                min-height: auto;
-            }
-
-            .content-section.reverse .section-content {
-                flex-direction: column;
-            }
-
-            .text-content h1 {
-                font-size: 2rem;
-            }
-
-            .text-content-center h1 {
-                font-size: 2rem;
-            }
-
-            .footer-content {
-                flex-direction: column !important;
-                gap: 30px !important;
-                text-align: center !important;
-                justify-content: center !important;
-            }
-
-            .footer-logo {
-                align-self: center !important;
-                margin-right: 0 !important;
-                margin-left: 0 !important;
-                text-align: center !important;
-            }
-
-            .footer-logo img {
-                height: 140px !important;
-                width: 140px !important;
-            }
-
-            .footer-right-content {
-                flex-direction: column !important;
-                gap: 30px !important;
-                align-items: center !important;
-                margin-left: 0 !important;
-            }
-
-            .footer-nav,
-            .footer-contact,
-            .footer-social {
-                min-width: auto !important;
-                text-align: center !important;
-            }
-
-            .footer-social .social-icons {
-                justify-content: center !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles/iss.css">
 </head>
 
 <body>
@@ -554,7 +84,110 @@
                 <div class="image-content">
                     <img src="images/iss/iss2.png" alt="iss picture" />
                 </div>
+            </div>
 
+            <div class="section-content">
+                <div class="image-content">
+                    <blockquote class="instagram-media" data-instgrm-captioned
+                        data-instgrm-permalink="https://www.instagram.com/reel/DN50LPCUpCV/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                        <div style="padding:16px;"> <a
+                                href="https://www.instagram.com/reel/DN50LPCUpCV/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                                target="_blank">
+                                <div style=" display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg
+                                        width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg></div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+                                        View this post on Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                                <div
+                                    style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+                                    <div>
+                                        <div
+                                            style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+                                        </div>
+                                        <div
+                                            style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: 8px;">
+                                        <div
+                                            style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+                                        </div>
+                                        <div
+                                            style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: auto;">
+                                        <div
+                                            style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+                                        </div>
+                                        <div
+                                            style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+                                        </div>
+                                        <div
+                                            style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+                                    <div
+                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+                                    </div>
+                                    <div
+                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+                                    </div>
+                                </div>
+                            </a>
+                            <p
+                                style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                                <a href="https://www.instagram.com/reel/DN50LPCUpCV/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                    style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
+                                    target="_blank">A post shared by International Space Station (@iss)</a></p>
+                        </div>
+                    </blockquote>
+                    <script async src="//www.instagram.com/embed.js"></script>
+                </div>
+                <div class="text-content">
+                    <h1>Mission Results</h1>
+                    <p>
+                        blah blah blah
+                    </p>
+                </div>
             </div>
         </section>
 
