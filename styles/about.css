@@ -165,7 +165,7 @@ body::before {
   text-transform: uppercase;
   font-family: 'Orbitron', sans-serif;
   margin: 0;
-  text-shadow: 0 0 10px #4d02cf, 0 0 20px #4d02cf, 0 0 30px #5821ff;
+  text-shadow: 0 0 10px #3232cb, 0 0 20px #5f5fe6, 0 0 30px #5f5fe6;
   /* animation: glow 2s ease-in-out infinite alternate; */
 }
 

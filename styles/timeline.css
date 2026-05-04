@@ -144,9 +144,11 @@ body::before {
 .timeline-header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .timeline-header div {
@@ -200,7 +202,7 @@ body::before {
 .timeline {
   position: relative;
   margin: 4rem auto;
-  padding: 2rem;
+  padding: 0.5rem 2rem 2rem 2rem;
   max-width: 1000px;
 }
 
@@ -218,7 +220,8 @@ body::before {
   position: relative;
   margin: 4rem 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
   min-height: 120px;
 }

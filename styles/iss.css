@@ -235,8 +235,22 @@ body::before {
   position: absolute;
   left: 0;
   color: #00ffe5;
+
   font-size: 1.2rem;
 }
+
+.publications-list a {
+  color: #00ffe5;
+}
+
+.publications-list a:hover {
+  color: #4B3DDD;
+}
+
+/* 
+.publications-list a:visited {
+  color: #18aa9b;
+} */
 
 .footer {
   background: #070707 !important;

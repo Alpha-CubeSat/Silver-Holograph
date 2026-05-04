@@ -54,6 +54,7 @@ body::before {
 .outreach-hero,
 .outreach-block,
 .outreach-gallery,
+.news,
 .footer {
   position: relative;
   z-index: 1;
@@ -286,9 +287,9 @@ body::before {
   transition: transform 0.4s ease;
 }
 
-.outreach-photo:hover img {
+/* .outreach-photo:hover img {
   transform: scale(1.05);
-}
+} */
 
 .outreach-photo::before {
   content: '';
@@ -303,9 +304,12 @@ body::before {
 }
 
 .outreach-photo:hover {
-  transform: translateY(-10px) scale(1.05);
+  transform: none;
+  box-shadow: none;
+  background: none;
+  /* transform: translateY(-10px) scale(1.05);
   box-shadow: 0 20px 60px rgba(0, 255, 229, 0.3);
-  background: linear-gradient(135deg, rgba(0, 255, 229, 0.2), rgba(75, 61, 221, 0.2));
+  background: linear-gradient(135deg, rgba(0, 255, 229, 0.2), rgba(75, 61, 221, 0.2)); */
 }
 
 .outreach-photo:hover::before {
@@ -464,6 +468,66 @@ body::before {
   display: none;
 }
 
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 18px;
+  margin: 40px 0 48px 0;
+  padding: 0 16px;
+}
+
+.news-preview {
+  background: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 16px;
+  transition: box-shadow 0.2s;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news-preview a {
+  text-decoration: none;
+}
+
+.news-title {
+  color: black;
+}
+
+.news-preview:hover,
+.news-preview:focus {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
+}
+
+.news-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.news-thumb {
+  width: 80%;
+  max-width: 220px;
+  min-width: 120px;
+  height: 110px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 6px;
+  margin: 0 auto 8px auto;
+  display: block;
+  background: #e0e0e0;
+}
+
+.news-summary {
+  font-size: 0.97em;
+  color: #444;
+}
+
 
 @media (max-width: 768px) {
   .navbar {
@@ -488,6 +552,7 @@ body::before {
     min-width: 160px;
 
   }
+
 
   .dropdown:hover .dropdown-content {
     display: block;
