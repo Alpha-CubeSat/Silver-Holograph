@@ -239,12 +239,123 @@ body::before {
   font-size: 1.2rem;
 }
 
-.publications-list a {
+.mission-results-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.05fr);
+  gap: 2.5rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+.media-card {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.media-frame {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 9 / 16;
+  background: rgba(13, 13, 51, 0.72);
+  border: 1px solid rgba(0, 255, 229, 0.18);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(10px);
+}
+
+.media-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.mission-results-panel {
+  background: rgba(13, 13, 51, 0.72);
+  border: 1px solid rgba(0, 255, 229, 0.18);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(10px);
+}
+
+.mission-results-panel h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.mission-results-panel h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   color: #00ffe5;
+  font-size: 1.4rem;
+}
+
+.mission-results-panel p {
+  max-width: none;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.results-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.result-stat {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 229, 0.14);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.35rem;
+}
+
+.stat-value {
+  display: block;
+  color: #00ffe5;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.publications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.publications-list li {
+  margin: 0;
+}
+
+.publications-list a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 229, 0.12);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
 .publications-list a:hover {
-  color: #4B3DDD;
+  transform: translateY(-3px);
+  border-color: rgba(0, 255, 229, 0.45);
+  background: rgba(0, 255, 229, 0.08);
+  color: #00ffe5;
 }
 
 /* 
@@ -442,6 +553,19 @@ body::before {
 
   .text-content-center h1 {
     font-size: 2rem;
+  }
+
+  .mission-results-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mission-results-panel {
+    padding: 1.5rem;
+  }
+
+  .results-summary {
+    grid-template-columns: 1fr;
   }
 
   .footer-content {
