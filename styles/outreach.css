@@ -43,6 +43,48 @@ body::before {
     text-align: center;
   }
 
+
+  .navbar,
+  .team-hero,
+  .meet-team,
+  .footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* NAVBAR STYLING */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #0d0d33;
+    font-size: 14px;
+    z-index: 9999;
+  }
+
+  .navbar .logo {
+    font-weight: bold;
+  }
+
+  .navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .navbar .nav-links a:hover {
+    color: #00ffe5;
+  }
+
   .videos-section h1 {
     font-size: 2.2rem;
     margin-bottom: 8px;
