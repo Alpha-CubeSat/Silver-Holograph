@@ -8,6 +8,19 @@
   <link rel="stylesheet" href="styles/outreach.css" />
   <link rel="icon" href="images/missionlogo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    /* Inline fallback: ensure navbar logo stays appropriately sized
+       even if external CSS doesn't load on deployed site */
+    .navbar .logo img {
+      height: 50px !important;
+      width: auto !important;
+      max-width: 220px !important;
+    }
+
+    .navbar {
+      background-color: rgba(13, 13, 51, 0.95);
+    }
+  </style>
 </head>
 
 <body>
